@@ -1,0 +1,4 @@
+{
+    "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false,
+    "C_Cpp.intelliSenseMemoryLimit": 16384
+}
