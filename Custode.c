@@ -450,71 +450,7 @@ int loginAdmin(char *out) {
 
 /* ========= MENUS ========= */
 
-void categoryMenu() {
-    int ch;
-    do {
-        printf("\n--- Category Menu ---\n");
-        printf("1.Add  2.Edit  3.Delete  4.List  5.Back\nChoice: ");
-        scanf("%d", &ch);
-        if (ch == 1) addCategory();
-        else if (ch == 2) editCategory();
-        else if (ch == 3) deleteCategory();
-        else if (ch == 4) listCategories();
-    } while (ch != 5);
-}
-
-void itemMenu() {
-    int ch;
-    do {
-        printf("\n--- Item Menu ---\n");
-        printf("1.Add  2.Edit  3.Delete  4.List  5.Search  6.Back\nChoice: ");
-        scanf("%d", &ch);
-        if (ch == 1) addItem();
-        else if (ch == 2) editItem();
-        else if (ch == 3) deleteItem();
-        else if (ch == 4) listItems();
-        else if (ch == 5) searchItem();
-    } while (ch != 6);
-}
-
-void adminMenu(const char *admin) {
-    int ch;
-    do {
-        printf("\n=== Admin Menu ===\n");
-        printf("1.Category Management\n");
-        printf("2.Item Management\n");
-        printf("3.Stock In\n");
-        printf("4.Stock Out\n");
-        printf("5.Reports\n");
-        printf("6.Logout\nChoice: ");
-        scanf("%d", &ch);
-        if (ch == 1) categoryMenu();
-        else if (ch == 2) itemMenu();
-        else if (ch == 3) doStock(admin, "admin", STOCK_IN);
-        else if (ch == 4) doStock(admin, "admin", STOCK_OUT);
-        else if (ch == 5) reportMenu();
-    } while (ch != 6);
-}
-
-void staffMenu(const char *user) {
-    int ch;
-    do {
-        printf("\n=== User Menu ===\n");
-        printf("1.List Items\n");
-        printf("2.Stock In\n");
-        printf("3.Stock Out\n");
-        printf("4.Logout\nChoice: ");
-        scanf("%d", &ch);
-        if (ch == 1) listItems();
-        else if (ch == 2) doStock(user, "staff", STOCK_IN);
-        else if (ch == 3) doStock(user, "staff", STOCK_OUT);
-    } while (ch != 4);
-}
-
-/* ========= MAIN ========= */
-
 int start() {
-    int choice;
     while (1) {
         printf("_________________________________\n");
         printf("             Custode             \n");
