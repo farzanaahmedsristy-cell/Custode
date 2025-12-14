@@ -83,10 +83,18 @@ int test_find_item_invalid_id() {
     return success;
 }
 
-int main() {
-    test_add_category();
-    test_find_category_index();
-    test_add_item_valid_category();
-    test_find_item_invalid_id();
+int main(void) {
+    int ok = 1;
+    ok &= test_add_category();
+    ok &= test_find_category_index();
+    ok &= test_add_item_valid_category();
+    ok &= test_find_item_invalid_id();
+
+    if (!ok) {
+        printf("Some tests failed\n");
+        return 1;
+    }
+    printf("All tests passed\n");
     return 0;
 }
+// ...existing code...
