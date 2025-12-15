@@ -450,12 +450,19 @@ int loginAdmin(char *out) {
 
 /* ========= MENUS ========= */
 
-int start() {
+void staffMenu(const char *username) {
+    
+}
+
+void adminMenu(const char *username) {
+    
+}
+
+int main() {
     int choice;
+
     while (1) {
-        
         printf("*______________Custode_______________*\n");
-        
         printf("1.Sign Up\n2.User Login\n3.Admin Login\n4.Exit\nChoice: ");
         scanf("%d", &choice);
         if (choice == 1) {
@@ -480,3 +487,5 @@ int start() {
     }
     return 0;
 }
+
+
